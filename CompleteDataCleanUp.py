@@ -51,7 +51,7 @@ optimized_data = data_df.copy()
 optimized_data[converted_int.columns] = converted_int
 optimized_data[converted_float.columns] = converted_float
 
-print(f"Total Data Usage on the original dataFrame :{mem_usage(data_df)}")
+print(f"Total Memory Usage on the original dataFrame :{mem_usage(data_df)}")
 #print(mem_usage(optimized_data))
 
 
@@ -90,14 +90,14 @@ column_types = dict(zip(dtypes_col, dtypes_type))
 # sample 10 key/value pairs from the dict
 # and print it nicely using prettyprint
 
-#preview = first2pairs = {key:value for key,value in list(column_types.items())[:]}
-#import pprint
-#pp = pp = pprint.PrettyPrinter(indent=4)
-#pp.pprint(preview)
+preview = first2pairs = {key:value for key,value in list(column_types.items())[:]}
+import pprint
+pp = pp = pprint.PrettyPrinter(indent=4)
+pp.pprint(preview)
 
 
 
 optimized_df = pd.read_csv('combined_stats.csv',dtype=column_types)
 
-print(f"New dataFrame memory usage :{mem_usage(optimized_df)}")
+print(f"Total Memory Usage on the new dataFrame :{mem_usage(optimized_df)}")
 
