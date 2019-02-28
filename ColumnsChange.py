@@ -61,3 +61,7 @@ def mem_usage(pandas_obj):
 
 
 print(f"Total Memory Usage on the new dataFrame :{mem_usage(optimized_df)}")
+
+
+player_df = pd.read_csv('player_id.csv')
+print(player_df.head(10))
