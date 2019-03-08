@@ -1,1 +1,0 @@
-var countries = ["Afghanistan","Albania"]

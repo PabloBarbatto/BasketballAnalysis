@@ -1,109 +1,4 @@
-<!DOCTYPE html>
-<html>
-  
-<head>
-<title>Basketball Analysis</title>
-<style>
-body {
-    background-color: #FFF;
-    margin: 30px;
-    margin-top: 10px;
-}
-#contentContainer {
-    width: 940px;
-    height: 500px;
-    border: 5px black solid;
-    overflow: hidden;
-    background-color: #F2F2F2;
-    cursor: pointer;
-
-}
-#bball {
-    position: relative;
-    left: 50px;
-    top: 50px;
-    height: 20px;
-
-    transition: left .5s ease-in, top .5s ease-in;
-}
-
-#court{
-    position:absolute;
-    width: 940px;
-    height: 500px;
-}
-* { box-sizing: border-box; }
-body {
-  font: 16px Arial; 
-}
-.autocomplete {
-   /*the container must be positioned relative: */
-  position: relative;
-  display: inline-block;
-  }  
-input {
-  border: 1px solid transparent;
-  background-color: #f1f1f1;
-  padding: 10px;
-  font-size: 16px;
-}
-input[type=text] {
-  background-color: #f1f1f1;
-  width: 100%;
-}
-input[type=submit] {
-  background-color: DodgerBlue;
-  color: #fff;
-}
-.autocomplete-items {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  border-bottom: none;
-  border-top: none;
-  z-index: 99;
-   /*position the autocomplete items to be the same width as the container: */
-  top: 100%;
-  left: 0;
-  right: 0;
-}
-.autocomplete-items div {
-  padding: 10px;
-  cursor: pointer;
-  background-color: #fff; 
-  border-bottom: 1px solid #d4d4d4; 
-}
-.autocomplete-items div:hover {
-   /*when hovering an item: */
-  background-color: #e9e9e9; 
-}
-.autocomplete-active {
-  /*when navigating through the items using the arrow keys:*/
-  background-color: DodgerBlue !important; 
-  color: #ffffff; 
-}
-</style>
-<link rel="stylesheet" href="../index/static/css/stylesheet.css">
-
-</head>
- 
-<body>
-<div id = "header">
-
-</div>
-<div id="contentContainer">
-    <img id = "court" src="static\images\fullcourt.png">
-    <img id = "bball" src="static\images\bballpointer.png">
-
-</div>
-<!--Make sure the form has the autocomplete function switched off:-->
-<form autocomplete="off" action="/action_page.php">
-  <div class="autocomplete" style="width:300px;">
-    <input id="myInput" type="text" name="myPlayer" placeholder="Player">
-  </div>
-  <input type="submit">
-</form>
-
-<script>
+var countries = ["Afghanistan","Albania"]
 var theThing = document.querySelector("#bball");
 var container = document.querySelector("#contentContainer");
  
@@ -115,13 +10,9 @@ function getClickPosition(e) {
     var yPosition = e.clientY - parentPosition.y - (theThing.clientHeight / 2);
      
     theThing.style.left = xPosition + "px";
-    theThing.style.top = yPosition + "px"; 
-    console.log(xPosition,yPosition)
-
+    theThing.style.top = yPosition + "px";
 }
-
-
-
+ //console.log(parentPosition)
 // Helper function to get an element's exact position
 function getPosition(el) {
   var xPos = 0;
@@ -143,17 +34,13 @@ function getPosition(el) {
  
     el = el.offsetParent;
     
-  }
+  }console.log(xPos, yPos)
   return {
     x: xPos,
     y: yPos
   };
 
 }
-
-
-// **********this is the dropdown block*******************
-var countries = ["Afghanistan","Albania"]
 function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
   the text field element and an array of possible autocompleted values:*/
@@ -253,8 +140,3 @@ document.addEventListener("click", function (e) {
  
 
 autocomplete(document.getElementById("myInput"), countries);
-</script>
-<script src="../index/static/js/players.js"></script>
-<script src="../index/static/js/logic.js"></script>
-</body>
-</html>

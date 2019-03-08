@@ -1,18 +1,18 @@
-body {
+.body {
     background-color: #FFF;
     margin: 30px;
     margin-top: 10px;
 }
-#contentContainer {
+.contentContainer {
     width: 940px;
     height: 500px;
     border: 5px black solid;
     overflow: hidden;
     background-color: #F2F2F2;
     cursor: pointer;
-
 }
-#bball {
+
+.bball {
     position: relative;
     left: 50px;
     top: 50px;
@@ -21,13 +21,14 @@ body {
     transition: left .5s ease-in, top .5s ease-in;
 }
 
-#court{
+.court{
     position:absolute;
     width: 940px;
     height: 500px;
+    box-sizing: border-box; 
 }
-* { box-sizing: border-box; }
-body {
+
+.body {
   font: 16px Arial; 
 }
 .autocomplete {
@@ -35,17 +36,17 @@ body {
   position: relative;
   display: inline-block;
 }
-input {
+.input {
   border: 1px solid transparent;
   background-color: #f1f1f1;
   padding: 10px;
   font-size: 16px;
 }
-input[type=text] {
+.input[type=text] {
   background-color: #f1f1f1;
   width: 100%;
 }
-input[type=submit] {
+.input[type=submit] {
   background-color: DodgerBlue;
   color: #fff;
 }
