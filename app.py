@@ -63,9 +63,10 @@ def player_model(player,coor_x,coor_y):
         model = pickle.load(open("models/"+ filename +"", 'rb'))
         result = model.predict([[1,distance,coor_x,coor_y]])
         r = result.tolist()
+        print(r)
         return json.dumps(r)
-        print(model.predict([[1,distance,coor_x,coor_y]]))
-        print("inside if ",filename)
+        #print(model.predict([[1,distance,coor_x,coor_y]]))
+        #print("inside if ",filename)
     else:
         print("notfound")
     print("Pablo")    
