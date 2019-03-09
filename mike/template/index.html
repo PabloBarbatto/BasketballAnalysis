@@ -11,8 +11,10 @@
 <script src="../static/js/logic.js" type="text/javascript"></script>
 <script src="../static/js/players.js" type="text/javascript"></script>
 <body>
-<div id = "header">
 
+  
+<div id = "header">
+<h2>Basketball Analysis</h2>
 </div>
 <div id="contentContainer">
     <img id = "court" src="../static/images/fullcourt.png">
@@ -27,7 +29,7 @@
   <input type="submit">
 </form>
 
-<!--<script>
+<script>
 var countries = ["Afghanistan","Albania"]
 var theThing = document.querySelector("#bball");
 var container = document.querySelector("#contentContainer");
@@ -74,11 +76,10 @@ function getPosition(el) {
   };
 
 }
-
- 
-</script> -->
-<script>
-  autocomplete(document.getElementById("myInput"), countries);
 </script>
+<script>
+  autocomplete(document.getElementById("myInput"), players);
+</script>
+
 </body>
 </html>
