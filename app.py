@@ -28,10 +28,12 @@ def player_model(player,coor_x,coor_y):
     coor_y = float(coor_y)
     
     if coor_y < 47:
+        home_away = 1
         if coor_x <= 25:
             a = 25 - coor_x
             b = coor_y - 5
             c = ( a*a + b*b )
+            
             print(" y smaller than 47,x smaller 25 before numpy")
             distance = np.sqrt(c)
             print(" y smaller than 47,x smaller 25 after numpy")
@@ -43,6 +45,7 @@ def player_model(player,coor_x,coor_y):
             distance = np.sqrt(c)
             print(" y smaller than 47,x bigger 25 after numpy")
     else:
+        home_away = 0
         if coor_x <= 25:
             a = 25 - coor_x
             b = 89 - coor_y
@@ -61,12 +64,11 @@ def player_model(player,coor_x,coor_y):
 
     if filename in listofmodels :
         model = pickle.load(open("models/"+ filename +"", 'rb'))
-        result = model.predict([[1,distance,coor_x,coor_y]])
+        result = model.predict([[home_away,distance,coor_x,coor_y]])
         r = result.tolist()
-        print(r)
         return json.dumps(r)
-        #print(model.predict([[1,distance,coor_x,coor_y]]))
-        #print("inside if ",filename)
+        print(model.predict([[1,distance,coor_x,coor_y]]))
+        print("inside if ",filename)
     else:
         print("notfound")
     print("Pablo")    
