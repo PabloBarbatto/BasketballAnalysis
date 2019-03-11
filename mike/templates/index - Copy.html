@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Bootstrap Contributors modified by Melissa Medina, Mike Lubin, and Pablo Barbatto.">
+
+<title>NBA Shot Success Prediction</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="../static/css/stylesheet.css">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+    /* Alows multiple dashboards to be loaded at once. */
+    /* .vizContainer {
+            position: relative;
+            height: 600px;
+            width: 900px;
+            top: 50px;
+            left: 200px;
+            z-index: 1;
+        }
+        #cover_div {
+            background-color: white;
+            height: 100%;
+            width: 100%;
+        } */
+  </style>
+
+</head>
+
+<body>
+    <header>
+        <!-- Navigation -->
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">About</h4>
+                        <p class="text-muted">Our goal is to utilize the power of machine learning to help everyone become the best armchair coach they can be regardless of personal knowledge.  Predict a player's shot success based on their court position; impress your friends, rise above your rivals!</p>
+                    </div> 
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Explore</h4>
+                        <!-- link drop to multiple sub-pages or off website sources -->
+                        <ul class="list-unstyled">
+                            <li class="nav-item active"><a class="nav-link" href="https://github.com/PabloBarbatto/BasketballAnalysis" class="text-white">GitHub Repository</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="projectsummary.html" class="text-white">Project Summary</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="about.html" class="text-white">Data Analysts</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">                    
+                    <strong>Machine Learning and NBA Player Performance</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <!-- project teaser div -->
+            <div class="container">
+                <h1 class="jumbotron-heading">NBA Shot Success Prediction</h1>
+                <p class="lead text-muted">This project is dedicated to exploring machine learning using Keras and a Neural Network to predict shot accuracy of individual NBA players during the 2017-2018 season.  Simply pick a player and plot their shot origin position to explore their odds of success.  Go head to head with players of your choice in displays that compare performance.</p> 
+                <div class="row" 
+                    style="background:transparent url('images\Player1_245783107.png') no-repeat center center /cover" alt="Adobe Stock Photo">
+                </div>                           
+            </div>
+        </section>
+
+        <div class="container">
+            <h1 class="h2">Take Your Shot</h1>
+            <p>It's the bottom of the fourth period, the seconds are ticking down.
+            The home team crown is on the edge of their seats; the game is tied.
+            There's enough time left for one <strong>last</strong> play...</p>
+            <p>Pick your player, the spot they will shoot from, and cross your fingers.
+                The shot predictor will do the rest.</p>            
+        </div>
+    </main>
+
+<div id="contentContainer">
+    <img id = "court" src="../static/images/fullcourt.png", alt="SVG provided by Stats.NBA.COM">
+    <img id = "bball" src="../static/images/bballpointer.png">
+
+</div>
+<!--Make sure the form has the autocomplete function switched off:-->
+<form autocomplete="off" action="/action_page.php">
+  <div class="autocomplete" style="width:300px;">
+    <input id="myInput" type="text" name="myPlayer" placeholder="Player">
+  </div>
+  <input type="submit">
+</form>
+
+<!-- <form action="127.0.0.01:5000/models/" method="post">
+    <input type="text" name="projectFilepath">
+    <input type="submit">
+</form> -->
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+<script src="../static/js/logic.js" type="text/javascript"></script>
+<script src="../static/js/players.js" type="text/javascript"></script>
+<!-- <script src="../static/js/tableau.js" type="text/javascript"></script> -->
+
+<script>
+  autocomplete(document.getElementById("myInput"), players);
+</script>
+
+<div class='tableauPlaceholder' id='viz1552326723993' style='position: relative'>
+
+  <noscript>
+    <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;ProjectDashboardsNBA&#47;Map&#47;1_rss.png' style='border: none' />
+    </a>
+  </noscript>
+
+  <object class='tableauViz'  style='display:none;'>
+    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+    <param name='embed_code_version' value='3' /> 
+    <param name='site_root' value='' />
+    <param name='name' value='ProjectDashboardsNBA&#47;Map' />
+    <param name='tabs' value='no' />
+    <param name='toolbar' value='yes' />
+    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;ProjectDashboardsNBA&#47;Map&#47;1.png' /> 
+    <param name='animate_transition' value='yes' />
+    <param name='display_static_image' value='yes' />
+    <param name='display_spinner' value='yes' />
+    <param name='display_overlay' value='yes' />
+    <param name='display_count' value='yes' />
+    <param name='filter' value='publish=yes' />
+  </object>
+
+</div>
+
+<script>
+  var divElement = document.getElementById('viz1552326723993');
+var vizElement = divElement.getElementsByTagName('object')[0];
+  
+vizElement.style.minWidth='420px';
+vizElement.style.maxWidth='650px';
+vizElement.style.width='100%';
+vizElement.style.minHeight='610px';
+vizElement.style.maxHeight='910px';
+vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+  
+var scriptElement = document.createElement('script');
+
+scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+<footer class="text-muted">
+
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Return to Top</a>        
+      </p>
+      <p>Check out our <a href="https://github.com/PabloBarbatto/BasketballAnalysis/">GitHub Repository for more information. </a></p>
+      <p class="float-right">2019</p>
+      <p>Michael Lubin, Melissa Medina, and Pablo Barbatto</p>  
+    </div>
+
+</footer>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+
+</body>
+
+</html>

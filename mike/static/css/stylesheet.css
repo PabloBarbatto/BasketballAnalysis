@@ -1,9 +1,8 @@
-
-
 body {
     background-color: #FFF;
     margin: 30px;
     margin-top: 10px;
+    font: 16px Arial;
 }
 #contentContainer {
     width: 950px;
@@ -19,19 +18,16 @@ body {
     left: 50px;
     top: 50px;
     height: 20px;
-
     transition: left .5s ease-in, top .5s ease-in;
 }
 
 #court{
-    position:absolute;
+    position:relative;
     width: 940px;
     height: 500px;
 }
 * { box-sizing: border-box; }
-body {
-  font: 16px Arial; 
-}
+
 .autocomplete {
   /*the container must be positioned relative:*/
   position: relative;
@@ -48,7 +44,7 @@ input[type=text] {
   width: 100%;
 }
 input[type=submit] {
-  background-color: DodgerBlue;
+  background-color: rgb(158, 12, 12);
   color: #fff;
 }
 .autocomplete-items {
@@ -74,6 +70,46 @@ input[type=submit] {
 }
 .autocomplete-active {
   /*when navigating through the items using the arrow keys:*/
-  background-color: DodgerBlue !important; 
+  background-color: rgb(158, 12, 12) !important; 
   color: #ffffff; 
 }
+
+:root {
+  --jumbotron-padding-y: 3rem;
+}
+
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 65rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
