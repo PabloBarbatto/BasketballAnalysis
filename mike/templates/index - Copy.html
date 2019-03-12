@@ -28,20 +28,6 @@
         font-size: 3.5rem;
       }
     }
-    /* Alows multiple dashboards to be loaded at once. */
-    /* .vizContainer {
-            position: relative;
-            height: 600px;
-            width: 900px;
-            top: 50px;
-            left: 200px;
-            z-index: 1;
-        }
-        #cover_div {
-            background-color: white;
-            height: 100%;
-            width: 100%;
-        } */
   </style>
 
 </head>
@@ -61,8 +47,7 @@
                         <!-- link drop to multiple sub-pages or off website sources -->
                         <ul class="list-unstyled">
                             <li class="nav-item active"><a class="nav-link" href="https://github.com/PabloBarbatto/BasketballAnalysis" class="text-white">GitHub Repository</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="projectsummary.html" class="text-white">Project Summary</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="about.html" class="text-white">Data Analysts</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="projectsummary.html" class="text-white">Project Summary</a></li>                            
                         </ul>
                     </div>
                 </div>
@@ -126,38 +111,38 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
 <script src="../static/js/logic.js" type="text/javascript"></script>
 <script src="../static/js/players.js" type="text/javascript"></script>
-<!-- <script src="../static/js/tableau.js" type="text/javascript"></script> -->
 
 <script>
   autocomplete(document.getElementById("myInput"), players);
 </script>
 
-<div class='tableauPlaceholder' id='viz1552357043202' style='position: relative'>
+<div class='tableauPlaceholder' id='viz1552360160541' style='position: relative'>
+  
   <noscript>
-    <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;FQ&#47;FQ5Y549MR&#47;1_rss.png'
+    <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;ProjectDashboardsNBA&#47;Player&#47;1_rss.png'
         style='border: none' /></a>
   </noscript>
   
   <object class='tableauViz' style='display:none;'>
-
     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
     <param name='embed_code_version' value='3' />
-    <param name='path' value='shared&#47;FQ5Y549MR' />
+    <param name='site_root' value='' />
+    <param name='name' value='ProjectDashboardsNBA&#47;Player' />
+    <param name='tabs' value='yes' />
     <param name='toolbar' value='yes' />
-    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;FQ&#47;FQ5Y549MR&#47;1.png' />
+    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;ProjectDashboardsNBA&#47;Player&#47;1.png' />
     <param name='animate_transition' value='yes' />
     <param name='display_static_image' value='yes' />
     <param name='display_spinner' value='yes' />
     <param name='display_overlay' value='yes' />
-    <param name='display_count' value='yes' />
-    <param name='filter' value='publish=yes' />
-
+    <param name='display_count' value='yes' />  
   </object>
+
 </div>
 
 <script type='text/javascript'>
 
-  var divElement = document.getElementById('viz1552357043202');
+  var divElement = document.getElementById('viz1552360160541');
   var vizElement = divElement.getElementsByTagName('object')[0];
 
   vizElement.style.minWidth = '420px';
@@ -171,7 +156,7 @@
 
   scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
   vizElement.parentNode.insertBefore(scriptElement, vizElement);
-  
+
 </script>
 
 <footer class="text-muted">
