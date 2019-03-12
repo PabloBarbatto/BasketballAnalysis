@@ -37,6 +37,10 @@ body {
   position: relative;
   display: inline-block;
 }
+.svg-area{
+  position: relative;
+  display: inline-block;
+}
 input {
   border: 1px solid transparent;
   background-color: #f1f1f1;
@@ -76,4 +80,11 @@ input[type=submit] {
   /*when navigating through the items using the arrow keys:*/
   background-color: DodgerBlue !important; 
   color: #ffffff; 
+}
+.bar {
+  fill: purple;
+}
+
+.bar:hover {
+  fill: orange;
 }
