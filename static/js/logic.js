@@ -256,20 +256,22 @@ console.log(url)
 d3.json(url).then(function(data){
   console.log(data);
 
-    var shotResult = data;
-    if (shotResult === 0) {
+    var [shotResult] = data;
+    if (shotResult === 1) {
+      console.log("green")  
       d3.select("#svg-area")
       .select("g")
-      .append("rec")
+      .select("rect")
       .attr("width", "646")
       .attr("height", "40")
       .attr("fill", "green");
       // block of code to be executed if the condition is true <rect width="646" height="40" fill="green" />
     } 
     else { 
+      console.log("red")
       d3.select("#svg-area")
       .select("g")
-      .append("rec")
+      .select("rect")
       .attr("width", "646")
       .attr("height", "40")
       .attr("fill", "red");
