@@ -2,7 +2,7 @@
 
 body {
     background-color: #FFF;
-    margin: 30px;
+    margin: auto;
     margin-top: 10px;
 }
 #contentContainer {
@@ -81,10 +81,6 @@ input[type=submit] {
   background-color: DodgerBlue !important; 
   color: #ffffff; 
 }
-.bar {
-  fill: purple;
-}
-
-.bar:hover {
-  fill: orange;
+.container {
+  margin-right: ;
 }
