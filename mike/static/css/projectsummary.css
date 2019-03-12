@@ -6,7 +6,7 @@
 }
 
 .blog-header-logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-family: Arial, Georgia, "Times New Roman", serif, "Playfair Display";
   font-size: 2.25rem;
 }
 
@@ -15,7 +15,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-family: Arial, Georgia, "Times New Roman", serif, "Playfair Display";
 }
 
 .display-4 {
@@ -115,6 +115,17 @@ h1, h2, h3, h4, h5, h6 {
 .blog-post-meta {
   margin-bottom: 1.25rem;
   color: #999;
+}
+
+/*
+ * About
+ */
+#about {
+  margin-bottom: 40px; 
+  padding-bottom: 1.25rem; 
+}
+#link {
+  padding-bottom: 1.25rem; 
 }
 
 /*
