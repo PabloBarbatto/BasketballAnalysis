@@ -30,7 +30,7 @@ def player_model(player,coor_x,coor_y):
     coor_y = float(coor_y)
     
     if coor_y < 47:
-        home_away = 1
+        home_away = 0
         if coor_x <= 25:
             a = 25 - coor_x
             b = coor_y - 5
@@ -47,7 +47,7 @@ def player_model(player,coor_x,coor_y):
             distance = np.sqrt(c)
             print(" y smaller than 47,x bigger 25 after numpy")
     else:
-        home_away = 0
+        home_away = 1
         if coor_x <= 25:
             a = 25 - coor_x
             b = 89 - coor_y
