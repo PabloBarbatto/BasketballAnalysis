@@ -3,6 +3,9 @@ body {
   margin: 30px;
   margin-top: 10px;
 }
+.jumbotron{
+  background-color: #f2f2f2
+}
 
 #contentContainer {
   width: 950px;
@@ -11,12 +14,13 @@ body {
   overflow: hidden;
   background-color: #F2F2F2;
   cursor: pointer;
+  float: center;
 
 }
 #bball {
   position: relative;
-  left: 50px;
-  top: 50px;
+  left: 20%;
+  top: 48%;
   height: 20px;
 
   transition: left .5s ease-in, top .5s ease-in;
@@ -35,7 +39,9 @@ font: 16px Arial;
 /*the container must be positioned relative:*/
 position: relative;
 display: inline-block;
+float: right;
 }
+
 input {
 border: 1px solid transparent;
 background-color: #f1f1f1;
@@ -105,6 +111,7 @@ color: #ffffff;
 .jumbotron .container {
   max-width: auto;
 }
+
 
 footer {
   padding-top: 3rem;

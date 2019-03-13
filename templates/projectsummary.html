@@ -25,7 +25,7 @@
         <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
-                    <a class="text-muted" href="index - Copy.html">Return to Main Page</a>
+                    <a class="text-muted" href="/">Return to Main Page</a>
                 </div>
             </div>
         </header>
@@ -40,22 +40,35 @@
         <main role="main" class="container">
             <div class="row">
                 <div class="col-md-8 blog-main">
-                    <h3 class="pb-3 mb-4 font-italic border-bottom">Project Summary</h3>
-
+                    <h2 class="pb-3 mb-4 font-italic">Project Summary</h2>
                     <div class="blog-post">
                         <h2 class="blog-post-title">Proposal</h2>
+                        <hr></hr>
                         <p>Given an assignment to explore machine learning as a final project we decided to see if we could use machine learning to predict individual player performance in the NBA 2017-2018 season.  The goal was to see how an individual player’s ability to convert a shot into a successful basket is impacted by the position on the court where the shot originates.</p>
                         <p>Obviously, there are many more variables to a successful shot conversion that the location the shot originates from and the player shooting--so many variables, in fact, that even Las Vegas oddsmakers don’t get outcomes right every time--so to accommodate for this we were hoping to achieve a target accuracy in the 65% range.</p> 
 
                         <h2 class="blog-post-title">Data Munging</h2>
+                        <hr></hr>
                         <h3>The Clean-Up</h3>
                         <p>From <strong><a href="https://www.bigdataball.com/">BigDataBall</a></strong> we downloaded a dataset for the 2017-2018 NBA regular season as well as playoffs. This data came as both individual files for each match of the season as well as a massive file that combined all the games into a single CSV.  Fortunately, the data was substantially uniform, so the time devoted to data cleaning was greatly reduced.</p>
                         <p>Initially we dropped the Description column as it was the largest column in the database and contained only string parameters that were better described in other columns.  Following this we performed a check to look for any non-numeric entries in our numeric variables and either corrected the entries or dropped them entirely.  We also dropped data that did not correspond with a shot being taken; rows that pertained to fouls, time-outs, substitutions, and the like.</p>
                         <p>Additionally, we created and incorporated multiple columns for shots converted, shots attempts, shooting accuracy, and a column containing unique numeric IDs for the player names that we could call on without standardizing names.  In order to eliminate outlying plays made by benchwarmers or players that were injured for a substantial portion of the season we also dropped any players that did not meet a minimum of 500 shot attempted for the season.</p>
                         <p>Once this was complete we had a trimmed down data set that could be loading into Python with Pandas.</p>
                         <p>Even though this dataset was substantially smaller than what we had started with initially it was still a very large file that gave us trouble when we first tried to work with it in Jupyter Notebook.  This was resolved by reading it in with Low Memory usage that left the columns types as strings or categories unless we specifically typed them otherwise.</p>
+                        <hr></hr>
+                        <h3>The Transformation</h3>
+                        <p>Using the data that we’ve loaded into Jupyter Notebook we called on the unique player ID field, grouped by each player, stored these groupby variables in a new dataframe as tuples, and then again into a dictionary so that they could easily be called upon when needed.  After we stored the player ID as a dictionary we sent it to a list in order to iterate the list numerically.  Once this was completed we were able to separate all player information into specific data frames and we were finally ready to begin modeling.</p>
+                        <hr></hr>
+                        <h3>The Education</h3>
+                        <p>Now that we had unique player dataframes our next step was to run each dataframe through the model.  The dependent and independent variables were defined and using K Nearest Neighbors we looped through each variable splitting the data into our test and train models.  Within 3 Ks the test train values were coming back with an accuracy of 55%-70%.</p>
+                        <p>Originally, we went with a higher K (9) which was returning a consistent accuracy of 63%-66% however we found as an unintended consequence of this the results were too sensitive and would not give players true positives.</p>
+                        <hr></hr>
+                        <h3>The Flask</h3>
+                        <p></p>
+
 
                         <h2 class="blog-post-title">Resources</h2>
+                        <hr></hr>
                         <h4>Tools</h4>
                         <ul>
                             <li>Jupyter Notebook</li>
@@ -67,6 +80,7 @@
                             <li>CSS</li>
                             <li>HTML</li>
                             <li>JavaScript</li>
+                            <li>JSON</li>
                             <li>Python</li>
                         </ul>
                         <h4>Libraries:</h4>
@@ -74,11 +88,14 @@
                             <li>Bootstrap</li>
                             <li>CSV</li>
                             <li>D3</li>
+                            <li>Flask</li>
                             <li>Numpy</li>
                             <li>Pandas</li>
+                            <li>Pickle</li>
                         </ul>  
 
                         <h2 class="blog-post-title">Future Improvements</h2>
+                        <hr></hr>
                         <p>With more time we would like to increase our machine learning model accuracy for individual players weighing probability of shot success to accommodate more variables.  We would also like to increase our focus from simple shot conversion to predict, with a reasonable 70% accuracy target, game winners. This would require trial and error with multiple types of machine learning processors to determine which one most suits the needs of our project goal. Once this foundation is set it is our belief that we could switch out the season data to predict any year’s outcome when the appropriate dataset is entered with minimal accommodation and data cleaning.</p>
                         <p>On the website user interactivity front we’d like to implement a game-like element where the user plays against the computer in a game of HORSE based on players chosen and locations picked on the map.  This would be accompanied by a more polished notification interface for made or missed shots.</p>
                         <p>It is our intention to continue working on the project even after the conclusion of the class, partly as way to improve our skills, but mainly because we really want to see this project borne out as we conceived it.</p>
