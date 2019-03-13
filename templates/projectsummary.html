@@ -57,19 +57,28 @@
                         <p>Even though this dataset was substantially smaller than what we had started with initially it was still a very large file that gave us trouble when we first tried to work with it in Jupyter Notebook.  This was resolved by reading it in with Low Memory usage that left the columns types as strings or categories unless we specifically typed them otherwise.</p>
                         <hr></hr>
                         <h3>The Transformation</h3>
-                        <p>Using the data that we’ve loaded into Jupyter Notebook we called on the unique player ID field, grouped by each player, stored these groupby variables in a new dataframe as tuples, and then again into a dictionary so that they could easily be called upon when needed.  After we stored the player ID as a dictionary we sent it to a list in order to iterate the list numerically.  Once this was completed we were able to separate all player information into specific data frames and we were finally ready to begin modeling.</p>
+                        <p>Using the data that we’ve loaded into Jupyter Notebook we called on the unique player ID field, grouped by each player, stored these groupby variables in a new dataframe as tuples, and then again into a dictionary so that they could easily be called upon when needed.  After we stored the player ID as a dictionary we sent it to a list in order to iterate the list numerically.  Once this was completed we were able to separate all player information into specific dataframes and we were finally ready to begin modeling.</p>
                         <hr></hr>
                         <h3>The Education</h3>
-                        <p>Now that we had unique player dataframes our next step was to run each dataframe through the model.  The dependent and independent variables were defined and using K Nearest Neighbors we looped through each variable splitting the data into our test and train models.  Within 3 Ks the test train values were coming back with an accuracy of 55%-70%.</p>
-                        <p>Originally, we went with a higher K (9) which was returning a consistent accuracy of 63%-66% however we found as an unintended consequence of this the results were too sensitive and would not give players true positives.</p>
+                        <p>Now that we had unique player dataframes our next step was to run each dataframe through the model.  The dependent and independent variables were defined and using K Nearest Neighbors we looped through each variable splitting the data into our test and train models.  Within 3 Ks the test train values were coming back with an accuracy between 55%-70%.</p>
+                        <p>Originally, we went with a higher K value (9) which was returning a consistent accuracy of 63%-66% however we found as an unintended consequence of this the results were too sensitive and would not give players true positives.</p>
                         <hr></hr>
                         <h3>The Flask</h3>
-                        <p></p>
-
-
+                        <p>In order for our models to be accessible by our restfulAPI we had to save them and reach them via a call to the API through our local sever.  To do this we imported a library called Pickle which saves the model (or any object) as a binary 0 or 1 sequence directly in Python but only for use within that language.  We saved all pickles with identical naming conventions only changing out individual player names to make future access easier.</p>
+                        <p>The API call that we make takes values input by the user and combines them with constants that the user does not modify in order to return a decision about whether or not the shot was made.  The player’s name is then converted back to a format that matches the name used with the pickle.</p>
+                        <p>Once we accessed the data we were able to run the model on our computers in seconds with the model returning a [0] or [1] when called on by the API based on whether or not the shot was successfully converted.</p>
+                        <hr></hr>
+                        <h3>The Website</h3>
+                        <p>After the models and API were doing what we wanted them to do it was time to turn our attention to the user interface portion.  There were many ways, simpler ways, to have the user interact with our data but we chose to incorporate a graphic interface where the user could click on the court and watch as their responses were generated in real-time.</p>
+                        <p>This was accomplished by locating and loading a png picture of a basketball court into HTML and then creating a EventListener function in JavaScript to get the element’s exact location to record on the console.  Due to a difference in size and scaling the results had to be divided by 10 so the values would match the values in the dataset. D3 was also used to create an amination of a basketball to appear on the mouse cursor when moved within the specific boundaries of the court image.</p>
+                        <p>To prevent having an overly-long list of names we decided to use an autocomplete box to allow the user to type all or part of a name and receive immediate potential matches that could then be clicked upon.  This was done entirely in HTML. </p>
+                        <hr></hr>
+                        <h3>The Graphs</h3>
+                        <p>Given that we had streamlined our data to maximize load efficiency and project accuracy there were a lot of fields from the original dataset that were dropped.  The reports section gave us an opportunity to explore other parts of the data and look for trends and explanations therein.  Going back to the original dataset we performed more clean-up to account for blank fields or fields with bad data.</p>
+                        <p>This new, report-oriented, dataset was then loaded into Tableau Public so that we could visualize and explore concepts beyond our original project scope. By loading in the same court png image used in our HTML as a custom background map in Tableau we were able to generate a shot density map of where players most commonly took shots from and where they converted those shots.  It offered particularly good insight when it came to why certain players were consistently converting shots over what might be considered ‘better’ players.</p>
                         <h2 class="blog-post-title">Resources</h2>
                         <hr></hr>
-                        <h4>Tools</h4>
+                        <h4>Tools:</h4>
                         <ul>
                             <li>Jupyter Notebook</li>
                             <li>Microsoft Excel</li>
@@ -110,7 +119,7 @@
                         <p class="mb-0" id="about"><strong>Michael Lubin</strong> is a data analyst specializing in frontend webcreation and data integration.  Working with MySQL, HTML, CSS, and JavaScript.
                         <p class="mb-0" id="about"><strong>Melissa Medina</strong> is a data analyst with eight years of
                             professional experience specializing in data management, cleanup, and efficiency. Working with Excel, Python, and JavaScript. Currently the Data Analyst for the Document Management team at FIS.</p>                        
-                        <p class="mb-0" id="about"><strong>Pablo Barbatto</strong> is a data analyst specializing in backend database creation and management.  Working with MySQL, JavaScript, Python, and numerous          sublibraries.</p>
+                        <p class="mb-0" id="about"><strong>Pablo Barbatto</strong> is a data analyst specializing in backend database creation and management.  Working with MySQL, JavaScript, Python, and numerous sublibraries.</p>
                     </div>
 
                     <div class="p-3">
@@ -121,9 +130,9 @@
                             <li><a href="https://github.com/Melissa13Medina/">Melissa Medina</a></li>
                             <li id="link"><a href="https://github.com/PabloBarbatto/">Pablo Barbatto</a></li>
                             <li><strong>LinkedIn</strong></li>
-                            <li><a href="#">Michael Lubin</a></li>
+                            <li><a href="https://www.linkedin.com/in/lubinmichael/">Michael Lubin</a></li>
                             <li><a href="https://www.linkedin.com/in/melissa13medina">Melissa Medina</a></li>
-                            <li id="link"><a href="#">Pablo Barbatto</a></li>
+                            <li id="https://www.linkedin.com/in/barbatto/"><a href="#">Pablo Barbatto</a></li>
                         </ol>
                     </div>
                 </aside><!-- /.blog-sidebar -->
