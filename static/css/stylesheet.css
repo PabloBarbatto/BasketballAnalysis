@@ -24,7 +24,7 @@ body {
 }
 
 #court{
-    position:absolute;
+    position: absolute;
     width: 940px;
     height: 500px;
 }
@@ -49,7 +49,11 @@ input {
 }
 input[type=text] {
   background-color: #f1f1f1;
-  width: 100%;
+  width: 100% ;
+  font: 18px sans-serif ;
+  font-weight: bold;
+  text-align: center;
+  color: black;
 }
 input[type=submit] {
   background-color: DodgerBlue;
@@ -82,5 +86,25 @@ input[type=submit] {
   color: #ffffff; 
 }
 .container {
-  margin-right: ;
+    margin-left: 10px;
+    text-align: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+.container-text {
+  margin-left: 25px;
+  text-align: left;
+  font-size: 17px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.takeYourShot {
+  margin-left: 25px;
+  text-align: left;
+  font-size: 17px;
+  padding-bottom: 30px;
+}    
+
+#mainTitle {
+  font-size: 32px;
 }

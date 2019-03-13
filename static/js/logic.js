@@ -261,6 +261,10 @@ d3.json(url).then(function(data){
       console.log("green")  
       d3.select("#svg-area")
       .select("g")
+      .select("text")
+      .text("MADE");
+      d3.select("#svg-area")
+      .select("g")
       .select("rect")
       .attr("width", "646")
       .attr("height", "40")
@@ -271,10 +275,15 @@ d3.json(url).then(function(data){
       console.log("red")
       d3.select("#svg-area")
       .select("g")
+      .select("text")
+      .text("MISSED");
+      d3.select("#svg-area")
+      .select("g")
       .select("rect")
       .attr("width", "646")
       .attr("height", "40")
       .attr("fill", "red");
+
       // block of code to be executed if the condition is false
     }
     });

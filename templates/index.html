@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Bootstrap Contributors modified by Melissa Medina, Mike Lubin, and Pablo Barbatto.">
 
-<title>NBA Shot Success Prediction</title>
+<title text-a>NBA Shot Success Prediction</title>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="../static/css/stylesheet.css">
@@ -29,6 +29,17 @@
       }
     }
   </style>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </head>
 
@@ -40,30 +51,30 @@
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
                         <h4 class="text-white">About</h4>
-                        <p class="text-muted">Our goal is to utilize the power of machine learning to help everyone become the best armchair coach they can be regardless of personal knowledge.  Predict a player's shot success based on their court position; impress your friends, rise above your rivals!</p>
+                        <p class="text-white">Our goal is to utilize the power of machine learning to help everyone become the best armchair coach they can be regardless of personal knowledge.  Predict a player's shot success based on their court position; impress your friends, rise above your rivals!</p>
                     </div> 
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Explore</h4>
                         <!-- link drop to multiple sub-pages or off website sources -->
                         <ul class="list-unstyled">
                             <li class="nav-item active"><a class="nav-link" href="https://github.com/PabloBarbatto/BasketballAnalysis" class="text-white">GitHub Repository</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="projectsummary.html" class="text-white">Project Summary</a></li>                            
+                            <li class="nav-item active"><a class="nav-link" href="/projectsummary" class="text-white">Project Summary</a></li>                            
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div class="navbar navbar-dark bg-dark box-shadow">
-            <div class="container d-flex justify-content-between">
-                <a href="#" class="navbar-brand d-flex align-items-center">                    
-                    <strong>Machine Learning and NBA Player Performance</strong>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="container d-flex justify-content-between" >
+                    <a href="#" class="navbar-brand d-flex align-items-center" id = "mainTitle">                    
+                        <strong>Machine Learning and NBA Player Performance</strong>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
     <main role="main">
 
@@ -78,30 +89,34 @@
             </div>
         </section>
 
-        <div class="container">
-            <h1 class="h2">Take Your Shot</h1>
-            <p>It's the bottom of the fourth period, the seconds are ticking down.
-            The home team crown is on the edge of their seats; the game is tied.
-            There's enough time left for one <strong>last</strong> play...</p>
-            <p>Pick your player, the spot they will shoot from, and cross your fingers.
-                The shot predictor will do the rest.</p>            
+        <div class= "takeYourShot">
+            <h1 class="h2" text-align: "center" >Take Your Shot</h1>
+            <p>It's the bottom of the fourth period, the seconds are ticking down.</p>
+            <p>The home team crowd is on the edge of their seats; the game is tied.</p>    
+            <p>There's enough time left for one <strong>last</strong> play...</p>
+            <p>Type in your player name, click the court to select your shooting position. The shot predictor will do the rest.</p>
+            <!-- <p>Pick your player, the spot they will shoot from, and cross your fingers.
+                The shot predictor will do the rest.</p>  -->
+                   
+             
         </div>
     </main>
 
 <div id="contentContainer">
     <img id = "court" src="../static/images/fullcourt.png", alt="SVG provided by Stats.NBA.COM">
     <img id = "bball" src="../static/images/bballpointer.png">
-
 </div>
+
 <!--Make sure the form has the autocomplete function switched off:-->
 
 <form autocomplete="off" action="/action_page.php">
   <div class="autocomplete" style="width:300px;">
-    <input id="myInput" type="text" name="myPlayer" placeholder="Player">
+    <input id="myInput" type="text" name="myPlayer" placeholder="Input Player Name">
   </div>
-  <svg  id = "svg-area" width="646" height="40" >
+  <svg  id = "svg-area" width="646" height="40"  >
     <g>
-      <rect width="646" height="40" fill="black" />
+        <rect width="646" height="40" fill="black" />
+        <text font-family="sans-serif" font-size="28px" fill="white" text-anchor="middle" x="323" y="28">Shot Not Selected</text>
     </g>
   </svg>
   
@@ -122,9 +137,10 @@
   autocomplete(document.getElementById("myInput"), players);
 </script>
 
-<div class="container">
+<div class="container-text">
   <h1 class="h2">Explore the Data</h1>
-  <p>In the course of the machine learning exercise there was a significant amount of data that could be explored in various ways.  Using tableau we can offer more insights into trends and patterns into player performance. </p>
+  <p>In the course of the machine learning exercise there was a significant amount of data that could be explored in various ways.</p>
+  <p>Using tableau we can offer more insights into trends and patterns into player performance. </p>
   <p>Explore the dashboards by clicking tabs and manipulating the player filters.</p>
 </div>
 

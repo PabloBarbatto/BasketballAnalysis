@@ -16,8 +16,10 @@ def welcome():
         """Basketball Shot Predictor"""
         return render_template("index.html")
 
-  
-   
+@app.route("/projectsummary")
+def summary():
+        """Basketball Summary"""
+        return render_template("projectsummary.html")
 
 @app.route("/models/<player>/<coor_x>/<coor_y>")
 def player_model(player,coor_x,coor_y):
