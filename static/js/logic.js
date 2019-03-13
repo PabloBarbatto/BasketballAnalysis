@@ -253,7 +253,34 @@ function getClickPosition(e) {
 var playerName = d3.select("#myInput").node().value;
 url = ("/models/" + playerName +"/"+ yPosition/10+1 +"/"+ xPosition/10+1)
 console.log(url)
-d3.json(url).then(function(data){console.log(data)})
+d3.json(url).then(function(data){
+  console.log(data);
+
+    var [shotResult] = data;
+    if (shotResult === 1) {
+      console.log("green")  
+      d3.select("#svg-area")
+      .select("g")
+      .select("rect")
+      .attr("width", "646")
+      .attr("height", "40")
+      .attr("fill", "green");
+      // block of code to be executed if the condition is true <rect width="646" height="40" fill="green" />
+    } 
+    else { 
+      console.log("red")
+      d3.select("#svg-area")
+      .select("g")
+      .select("rect")
+      .attr("width", "646")
+      .attr("height", "40")
+      .attr("fill", "red");
+      // block of code to be executed if the condition is false
+    }
+    });
+
+
+
 
     //###### Logs Location #######
 var location = console.log("X",xPosition/10+1, "Y",yPosition/10+1)
